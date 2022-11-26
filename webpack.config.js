@@ -6,12 +6,11 @@ module.exports = {
         path:path.join(__dirname, '/dist'),
         filename: 'bundle.js'
     },
-    //watch:true, //npx webpack
     devServer: {
         port: 8080,
         static: {
             directory:path.resolve(__dirname, 'dist')
-        } //npx webpack-dev-server
+        } 
     },
     module: {
         rules: [{
@@ -23,6 +22,5 @@ module.exports = {
     resolve: {
         extensions: [ '.tsx', '.ts', '.js']
     },
-    //mode:'production', //npx webpack
-    mode:'development' //npx webpack-dev-server
+    mode:'development' 
 }

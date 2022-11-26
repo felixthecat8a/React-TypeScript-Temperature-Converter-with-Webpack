@@ -1,63 +1,60 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-/**********************************************************************************/
+/*********************************************************/
 import {createUseStyles} from 'react-jss'
 const useStyles = createUseStyles({
-  Error: {
-    textAlign: 'center',
-    fontSize: 'larger',
-    fontWeight: 'bolder',
-    color: '#C1819E'
-  },
-})
-const Error = () => {
-  const classes = useStyles()
-  return (
-    <p className={classes.Error}>Please Enter A Number</p>
-  )
-}
-/**********************************************************************************/
-import styled from 'styled-jss'
-const Body = styled ('body') ({
-  fontFamily: 'Times New Roman, Times, serif',
-  backgroundColor: '#333',
-  color: 'azure',
-  textAlign: 'center',
-  margin: 10,
-  padding: 10,
-})
-const Title = styled('h1') ({
-  color: 'lightseagreen',
-  textDecoration: 'underline',
-  margin: 10,
-  padding: 10,
-})
-/**********************************************************************************/
-import jss from 'jss'
-import preset from 'jss-preset-default'
-jss.setup(preset())
-const style = {
-  Form: {
+  h1Title: {
+    color: 'lightseagreen',
+    textDecoration: 'underline',
     margin: 10,
     padding: 10,
   },
-  Label: {
-    color:'#81c1a4'
-  },
-  Input: {
-    padding: 5,
+  pError: {
     textAlign: 'center',
-    borderStyle: 'solid',
-    borderRadius: '.5rem',
-    '&:focus': {
-        outlineWidth: '3px',
-        outlineColor: 'seagreen',
-        outlineStyle: 'solid'
-    }
+    fontSize: 'larger',
+    fontWeight: 'bolder',
+    backgroundColor: '#C1819E'
   }
-} 
-const { classes } = jss.createStyleSheet(style).attach()
-/**********************************************************************************/
+})
+
+const Title = () => {
+  const classes = useStyles()
+  return (
+    <h1 className={classes.h1Title}>Temperature Conversion App</h1>
+  )
+}
+const Error = () => {
+  const classes = useStyles()
+  return (
+    <p className={classes.pError}>Please Enter A Number</p>
+  )
+}
+
+/*********************************************************/
+import styled from 'styled-components';
+const Body = styled.body`
+font-family:100% 'Times New Roman', Times, serif;
+background-color:#333;
+color:azure;
+text-align: center;
+padding:10px;
+margin:10px;
+`;
+const Label = styled.h3`
+color:#81C1A4;`;
+const Form = styled.form`
+padding:10px;
+margin:10px;
+`;
+const Input = styled.input`
+padding:5px;
+border-style:solid;
+border-radius:5px;
+&:focus{
+  outline:3px seagreen solid;
+}
+`;
+/***************************************************************/
 class Temperature extends React.Component {
   state = { scale: 'c', temp: 0 };
 
@@ -78,19 +75,20 @@ class Temperature extends React.Component {
     if (isNaN(fahrenheit)|| isNaN(celsius)) {
       error = <Error></Error>
     }
+
     return (
-    <Body>
-        <Title>Temperature Conversion App</Title>
-        <form className={classes.Form}>
-          <h3 className={classes.Label}>Enter Temperature in degrees Fahreheit: </h3>
-          <input className={classes.Input} id="fahrenheit" value={fahrenheit} onChange={this.handleChangeFahrenheit} />
-        </form>
+      <Body>
+        <Title></Title>
+        <Form>
+          <Label>Enter Temperature in degrees Fahreheit: </Label>
+          <Input id="fahrenheit" value={fahrenheit} onChange={this.handleChangeFahrenheit} />
+        </Form>
         {error}
-        <form className={classes.Form}>
-          <h3 className={classes.Label}>Enter Temperature in degrees Celcius: </h3>
-          <input className={classes.Input} id="celsius" value={celsius} onChange={this.handleChangeCelsius} />
-        </form>
-    </Body>
+        <Form >
+          <Label>Enter Temperature in degrees Celcius: </Label>
+          <Input id="celsius" value={celsius} onChange={this.handleChangeCelsius} />
+        </Form>
+      </Body>
     );
   }
 }

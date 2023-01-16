@@ -1,4 +1,4 @@
-# React-TypeScript Temperature Conversion
+# React-Webpack Temperature Conversion
 This is a simple temperature conversion web app using React and Typescript. 
 I included examples of using React-JSS and Styled-Components. 
 

@@ -1,6 +1,7 @@
 body {
-  font-family:100% 'Times New Roman', Times, serif;
+  height: 100%;
+  font-family: sans-serif;
   Background-color:#333;
-  color:azure;
+  color: azure;
   text-align: center;
 }

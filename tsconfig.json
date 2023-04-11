@@ -24,7 +24,7 @@
 
 /*
 add react react-dom typescript
-add jss jss-preset-default styled-jss 
+add jss jss-preset-default 
 add webpack webpack-cli webpack-dev-server --dev
 add @types/react ts-loader html-webpack-plugin --dev
 "scripts": {"dev": "webpack-dev-server"},

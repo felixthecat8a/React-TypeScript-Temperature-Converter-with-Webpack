@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",
+    "module": "commonjs",
+    "rootDir": "./src/",
+    "outDir": "./dist/",
+    "strict": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "lib": [ "DOM", "DOM.Iterable", "ESNext"],
+  },
+  "include": [
+    "./src/"
+  ],
+  "exclude": [
+    "../source"
+  ]
+}
+
+/*
+add react react-dom typescript
+add jss jss-preset-default styled-jss 
+add webpack webpack-cli webpack-dev-server --dev
+add @types/react ts-loader html-webpack-plugin --dev
+"scripts": {"dev": "webpack-dev-server"},
+*/

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { classes } from './jss_export';
-import { Footnotes } from './footnotes';
 
 const scaleNames = {
   c: 'Celsius' ,
@@ -70,7 +69,6 @@ class Calculator extends React.Component <{},{ value: any, scale: string }> {
           </fieldset>
           <p className={classes.ErrorMessage}>{errorMessage}</p>
         </form>
-        <Footnotes/>
       </>
     );
   };

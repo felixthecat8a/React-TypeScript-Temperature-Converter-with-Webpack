@@ -1,5 +1,5 @@
 # React-Webpack Temperature Conversion
-This is a simple Celcius-to-Fahrenheit/Fahrenheit-to-Celcius temperature conversion web app using React. 
-I included examples of using React-JSS and TypeScript. 
+This is a simple Celcius-to-Fahrenheit/Fahrenheit-to-Celcius temperature converter using React & TypeScript. 
+React-JSS is used to handle the CSS. 
 
-I also included the Webpack config file that I created without using create-react-app.
+This project also uses Webpack and includes a `webpack.config.js` file.
